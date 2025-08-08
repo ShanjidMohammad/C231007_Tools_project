@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="auth.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="logo">LOGO<span>.</span></h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+      </nav>
+      <div class="buttons">
+        <a href="login.html" class="btn">Sign In</a>
+        <a href="signup.html" class="btn">Sign Up</a>
+      </div>
+    </header>
+    
+    <div class="form-wrapper">
+      <p class="switch-link">Don’t have an account? <a href="signup.html">Sign Up</a></p>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="input-row">
+          <i class="fas fa-user"></i>
+          <input type="text" id="username" placeholder="Username or Email" required />
+        </div>
+        <div class="input-row">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Password" required />
+        </div>
+        <button type="submit" class="submit-btn">Sign In</button>
+        <div class="options">
+          <label><input type="checkbox" /> Remember Me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent form from refreshing the page
+      
+      // Get input values
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Fake login check
+      if ((username === "admin" || username === "user@example.com") && password === "123456") {
+        // Redirect to dashboard
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Invalid username or password!");
+      }
+    });
+  </script>
+</body>
+</html>
